@@ -1,2 +1,2 @@
-*.cs* linguist-language=C#
-*.css* linguist-language=CSS
+*.cs linguist-language=C#
+*.css linguist-language=CSS
