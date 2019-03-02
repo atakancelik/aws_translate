@@ -28,7 +28,7 @@ namespace Translate_AWS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_SourceLanguageCode;
+        protected global::System.Web.UI.WebControls.DropDownList txt_SourceLanguageCode;
         
         /// <summary>
         /// btn_Swap control.
@@ -46,7 +46,7 @@ namespace Translate_AWS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_TargetLanguageCode;
+        protected global::System.Web.UI.WebControls.DropDownList txt_TargetLanguageCode;
         
         /// <summary>
         /// txt_ToTranslate control.

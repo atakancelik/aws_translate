@@ -27,53 +27,30 @@ namespace Translate_AWS
             "tr",
             "en"
         };
+
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-        }
 
-        public void Clear()
-        {
-            txt_ToTranslate.Text = "";
-            txt_Translated.Text = "";
         }
-
 
         protected void btn_Translate_Click(object sender, EventArgs e)
         {
-            if (LanguageCodes.Any(x => x == txt_SourceLanguageCode.Text))
+            if (LanguageCodes.Any(x => x == txt_SourceLanguageCode.Text || x == txt_TargetLanguageCode.Text))
             {
-                if (LanguageCodes.Any(x => x == txt_TargetLanguageCode.Text))
+                if (!string.IsNullOrEmpty(txt_ToTranslate.Text))
                 {
-                    if (string.IsNullOrEmpty(txt_SourceLanguageCode.Text) ||
-                        string.IsNullOrEmpty(txt_TargetLanguageCode.Text) || string.IsNullOrEmpty(txt_ToTranslate.Text))
-                    {
-                        Clear();
-                        txt_Translated.Text = "! ! ! Fill all fields ! ! !";
-                        txt_ToTranslate.Text = "! ! ! Fill all fields ! ! !";
-                    }
-                    else
-                        txt_Translated.Text = Translate(txt_SourceLanguageCode.Text, txt_TargetLanguageCode.Text,
-                            txt_ToTranslate.Text);
-                }
-                else
-                {
-                    Clear();
-                    txt_Translated.Text = "! ! ! Enter a valid Language Code ! ! !";
-                    txt_ToTranslate.Text = "! ! ! Enter a valid Language Code ! ! !";
+                    txt_Translated.Text = Translate(txt_SourceLanguageCode.Text, txt_TargetLanguageCode.Text, txt_ToTranslate.Text);
                 }
             }
-            else
-                txt_Translated.Text = "! ! ! Enter a valid Language Code ! ! !";
-                txt_ToTranslate.Text = "! ! ! Enter a valid Language Code ! ! !";
         }
 
         protected void btn_Swap_Click(object sender, EventArgs e)
         {
-           string text = txt_SourceLanguageCode.Text;
-           txt_SourceLanguageCode.Text = txt_TargetLanguageCode.Text;
-           txt_TargetLanguageCode.Text = text;
+            string text = txt_SourceLanguageCode.Text;
+            txt_SourceLanguageCode.Text = txt_TargetLanguageCode.Text;
+            txt_TargetLanguageCode.Text = text;
         }
+
         public string Translate(string SourceLanguageCode, string TargetLanguageCode, string Text)
         {
             AmazonTranslateRequest translateRequest = new AmazonTranslateRequest();

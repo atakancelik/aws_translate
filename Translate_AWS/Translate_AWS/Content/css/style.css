@@ -1,0 +1,121 @@
+﻿:root {
+    --yellow: #fbc531;
+    --yellow-dark: #e1b12c;
+    --white: #fff;
+    --black: #000;
+}
+
+.flex {
+    display: flex;
+}
+
+.top {
+    width: 100%;
+    height: 111px;
+    background: var(--yellow);
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+    .top img {
+        height: 80%;
+    }
+
+    .inputs {
+        width: 800px;
+        margin: 20px auto;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .inputs .select {
+        width: 100%;
+        position: relative;
+    }
+
+        .inputs .select:after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: 5px;
+            border: 6px solid transparent;
+            border-top-color: var(--yellow) !important;
+        }
+
+.content {
+    width: 800px;
+    margin: 10px auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .inputs input[type="text"],
+    .content textarea,
+    .inputs select {
+        width: 100%;
+        flex: 1;
+        border: 0;
+        border-bottom: 1px solid var(--yellow);
+        background: transparent;
+        -moz-appearance: none; /* Firefox */
+        -webkit-appearance: none; /* Safari and Chrome */
+        appearance: none;
+        position: relative;
+        padding: 5px;
+    }
+
+    .inputs input[type="submit"],
+    .content input[type="submit"] {
+        margin: 0 8px;
+        background: var(--yellow);
+        color: var(--white);
+        border: 1px solid var(--yellow);
+        font-size: 1em;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background .3s, color .3s;
+    }
+
+        .inputs input[type="submit"]:hover,
+        .content input[type="submit"]:hover {
+            background: transparent;
+            color: var(--yellow);
+        }
+
+    .content input[type="submit"] {
+        height: 40px;
+    }
+
+    .content textarea {
+        height: 300px;
+        resize: none;
+    }
+
+
+@media (max-width: 767px) {
+    .top {
+        height: 80px;
+    }
+
+    .inputs,
+    .content {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+        .content input[type="submit"] {
+            width: 100%;
+            margin: 8px;
+        }
+
+        .content textarea {
+            height: 150px;
+        }
+}

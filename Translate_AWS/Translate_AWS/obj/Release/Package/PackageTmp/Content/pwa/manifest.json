@@ -1,0 +1,17 @@
+{
+  "name": "AWS Translate",
+  "short_name": "AWST",
+  "description": "AWS translate system.",
+  "icons": [
+    {
+      "src": "/Content/img/layout/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+
+  "start_url": "/AWS.aspx",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#fbc531"
+}
